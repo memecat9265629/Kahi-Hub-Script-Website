@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Script Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #444;
+        }
+        pre {
+            background: #f7f7f7;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .discord-btn {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #7289da;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .discord-btn:hover {
+            background-color: #5b6eae;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Script Kahi Hub V0.5</h1>
+</header>
+
+<div class="container">
+    <!-- Update Log -->
+    <h2>Update Log / Changelog</h2>
+    <ul>
+        <li>Version 0.5: Initial release with basic features.</li>
+    </ul>
+
+    <!-- Code Loadstring -->
+    <h2>Code Loadstring</h2>
+    <pre id="code-snippet">loadstring(game:HttpGet("https://your-script-link-here"))()</pre>
+    <button class="button" onclick="copyToClipboard()">Copy Loadstring</button>
+
+    <!-- Script Title -->
+    <h2>Script Features</h2>
+    <ul>
+        <li>Feature 1: Auto-farm functionality.</li>
+        <li>Feature 2: Speed hack.</li>
+        <li>Feature 3: GUI interface for customization.</li>
+    </ul>
+
+    <!-- Proof Image -->
+    <h2>Proof</h2>
+    <img src="https://via.placeholder.com/800x400" alt="Proof Image">
+
+    <!-- Support Discord -->
+    <h2>Support</h2>
+    <a class="discord-btn" href="https://discord.gg/yourservercode" target="_blank">Join our Discord</a>
+</div>
+
+<script>
+    // Copy code to clipboard
+    function copyToClipboard() {
+        const codeSnippet = document.getElementById('code-snippet').textContent;
+        navigator.clipboard.writeText(codeSnippet).then(() => {
+            alert('Code copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
+
+</body>
+</html>
