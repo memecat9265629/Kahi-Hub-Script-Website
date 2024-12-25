@@ -51,14 +51,3 @@ local Button = Tab:CreateButton({
    -- The function that takes place when the button is pressed
    end,
 })
-
-local Input = Tab:CreateInput({
-   Name = "Execute",
-   CurrentValue = "",
-   PlaceholderText = "Inf Yield Execute",
-   RemoveTextAfterFocusLost = false,
-   Flag = "Inf Yield",
-   Callback = function(Text)
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))():ExecuteCommand(Text)
-   end,
-})
