@@ -79,6 +79,9 @@
         <li>Version 0.1: Initial release with basic features. website</li>
     </ul>
 
+    <h2>RayField Ui library (Soon): Proof. </h2>
+    <img src="https://via.placeholder.com/800x400" alt="Proof Image">
+    
     <!-- Code Loadstring -->
     <h2>Code Loadstring</h2>
     <pre id="code-snippet">loadstring(game:HttpGet("https://your-script-link-here"))()</pre>
@@ -90,12 +93,11 @@
         <li>Feature 1: soon release.</li>
     </ul>
 
-    <!-- Proof Image -->
-    <h2>RayField Ui library (Soon): Proof. </h2>
+    <h2>Orion Ui library (Soon): proof.</h2>
     <img src="https://via.placeholder.com/800x400" alt="Proof Image">
-
+    
     <h2>Code Loadstring</h2>
-    <pre id="code-snippet">loadstring(game:HttpGet("https://your-script-link-here"))()</pre>
+    <pre id="code-snippet1">loadstring(game:HttpGet("test"))()</pre>
     <button class="button" onclick="copyToClipboard()">Copy Loadstring</button>
 
     <!-- Script Title -->
@@ -103,10 +105,6 @@
     <ul>
         <li>Feature 1: soon release.</li>
     </ul>
-
-    <!-- Proof Image -->
-    <h2>Orion Ui library (Soon): proof.</h2>
-    <img src="https://via.placeholder.com/800x400" alt="Proof Image">
 
     <!-- Support Discord -->
     <h2>Support</h2>
@@ -127,7 +125,14 @@
     function copyToClipboard() {
         const codeSnippet = document.getElementById('code-snippet').textContent;
         navigator.clipboard.writeText(codeSnippet).then(() => {
-            alert('Code copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    },
+    // Copy code to clipboard
+    function copyToClipboard() {
+        const codeSnippet1 = document.getElementById('code-snippet').textContent;
+        navigator.clipboard.writeText(codeSnippet1).then(() => {
         }).catch(err => {
             console.error('Failed to copy: ', err);
         });
