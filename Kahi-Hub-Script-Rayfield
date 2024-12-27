@@ -1,13 +1,13 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "Wave Executor",
-    LoadingTitle = "Rayfield UI",
-    LoadingSubtitle = "By SPDM Team",
+    Name = "Kahi Hub",
+    LoadingTitle = "Kahi Hub - Loading",
+    LoadingSubtitle = "By memecat9265629",
     ConfigurationSaving = {
         Enabled = true,
         FolderName = nil, -- Change to save in a specific folder
-        FileName = "WaveConfig"
+        FileName = "KahiHubConfig"
     },
     KeySystem = true, -- Set to true for key system
     KeySettings = {
