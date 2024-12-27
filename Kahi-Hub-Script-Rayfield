@@ -1,22 +1,26 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/memecat9265629/RayField-Theme-Ui-library/refs/heads/main/Rayfield-Ui-library-theme'))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "Kahi Hub",
-    LoadingTitle = "Kahi Hub - Loading",
-    LoadingSubtitle = "By memecat9265629",
-    ConfigurationSaving = {
-        Enabled = true,
-        FolderName = nil, -- Change to save in a specific folder
-        FileName = "KahiHubConfig"
-    },
-    KeySystem = true, -- Set to true for key system
-    KeySettings = {
-        Title = "Kahi Hub - Key System",
-        Subtitle = "V0.1",
-        Note = "Join Discord for the key: discord.gg/sabvPsPC",
-        SaveKey = true,
-        Key = "Kahi_Hub_UrMom"
-    }
+   Name = "Kahi Hub",
+   Icon = Default, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Kahi Hub - Loading",
+   LoadingSubtitle = "by satoru_gojo_cute.",
+   Theme = "Yellow", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "KahiConfig"
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Kahi Hub - Key system",
+      Subtitle = "Script",
+      Note = "the discord for the key code Link: ", -- Use this to tell the user how to get a key
+      FileName = "Key_KahiHub", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Kahi_Hub_UrMom"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
 })
 
 local Tab = Window:CreateTab("Main", 4483362458) -- Tab with a specific image ID
