@@ -5,13 +5,13 @@ local Window = Rayfield:CreateWindow({
    Icon = Default, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Kahi Hub - Loading",
    LoadingSubtitle = "by satoru_gojo_cute.",
-   Theme = "Yellow", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   Theme = "MerryChristmas", -- Check https://docs.sirius.menu/rayfield/configuration/themes
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "KahiConfig"
+      FileName = "Kahi Hub"
    },
-   KeySystem = false, -- Set this to true to use our key system
+   KeySystem = true, -- Set this to true to use our key system
    KeySettings = {
       Title = "Kahi Hub - Key system",
       Subtitle = "Script",
