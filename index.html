@@ -15,6 +15,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
 
         header {
@@ -47,12 +48,11 @@
             overflow-y: auto;
         }
 
-        .discord-btn {
+        .discord-btn, .Website-btn {
             display: block;
             margin: 10px auto;
             text-decoration: none;
             text-align: center;
-            margin-top: 10px;
             color: #fff;
             background-color: #7289da;
             padding: 10px 15px;
@@ -60,25 +60,10 @@
             font-weight: bold;
         }
 
-        .discord-btn:hover {
+        .discord-btn:hover, .Website-btn:hover {
             background-color: #5b6eae;
-        }
-        .Website-btn {
-            display: block;
-            margin: 10px auto;
-            text-decoration: none;
-            text-align: center;
-            margin-top: 10px;
-            color: #fff;
-            background-color: #7289da;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
         }
 
-        .Website-btn:hover {
-            background-color: #5b6eae;
-        }
         img {
             max-width: 100%;
             height: auto;
@@ -91,10 +76,43 @@
             background-color: black;
             margin: 20px 0;
         }
+
+        /* Dark Mode Styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #e0e0e0;
+            }
+
+            .container {
+                background: #1e1e1e;
+                box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            }
+
+            pre {
+                background: #2a2a2a;
+                border: 1px solid #444;
+            }
+
+            header {
+                background-color: #1a1a1a;
+            }
+
+            .discord-btn, .Website-btn {
+                background-color: #5b6eae;
+            }
+
+            .discord-btn:hover, .Website-btn:hover {
+                background-color: #7289da;
+            }
+
+            .thick-hr {
+                background-color: #333;
+            }
+        }
     </style>
 </head>
 <body>
-
 <header>
     <h1>Kahi Hub - Script</h1>
 </header>
@@ -141,6 +159,5 @@
         <li>Special Thanks: AlexHub555, KanKai_Ku</li>
     </ul>
 </div>
-
 </body>
 </html>
