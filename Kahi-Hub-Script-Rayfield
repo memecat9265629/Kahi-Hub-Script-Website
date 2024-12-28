@@ -1,1 +1,32 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/memecat9265629/RayField-Theme-Ui-library/refs/heads/main/Rayfield-Ui-library-theme'))()
+local Window = Rayfield:CreateWindow({
+   Name = "Kahi Hub (Fixed)",
+   Icon = 0,
+   LoadingTitle = "Kahi Hub - Loading",
+   LoadingSubtitle = "by satoru_gojo_cute.",
+   Theme = "Yellow",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Kahi Hub"
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "Kahi Hub",
+      Subtitle = "Key System",
+      Note = "The Key code for Discord Link here: ",
+      FileName = "Key",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"Kahi-Hub-UrMom"}
+   }
+})
 
+local MainTab = Window:CreateTab("Main", 4483362458)
+
+local Button = MainTab:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
