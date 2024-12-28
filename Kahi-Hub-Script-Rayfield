@@ -45,17 +45,6 @@ local Paragraph = DiscordTab:CreateParagraph({Title = "Discord Link", Content = 
 
 local ScriptTab = Window:CreateTab("Script", 4483362458)
 
-local Paragraph = ScriptTab:CreateParagraph({Title = "Game", Content = "Not Yet."})
-
-ScriptTab:CreateButton({
-    Name = "unknown",
-    Callback = function()
-        
-    end,
-})
-
-local Paragraph = ScriptTab:CreateParagraph({Title = "Game", Content = "Blox Fruits"})
-
 ScriptTab:CreateButton({
     Name = "RedzHub",
     Callback = function()
