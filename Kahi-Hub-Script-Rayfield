@@ -5,7 +5,7 @@ local Window = Rayfield:CreateWindow({
    Icon = Default, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Kahi Hub - Loading",
    LoadingSubtitle = "by satoru_gojo_cute.",
-   Theme = "MerryChristmas", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   Theme = "Yellow", -- Check https://docs.sirius.menu/rayfield/configuration/themes
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil, -- Create a custom folder for your hub/game
@@ -26,19 +26,39 @@ local Window = Rayfield:CreateWindow({
 Rayfield:Notify({
     Title = "Welcome!",
     Content = "Loaded, Successfully Kahi Hub - RayField",
-    Duration = 5,
+    Duration = 3,
     Image = 4483362458
 })
 
-local MainTab = Window:CreateTab("Main", 4483362458) -- Tab with a specific image ID
+local MainTab = Window:CreateTab("Main", 4483362458)
 
 MainTab:CreateButton({
-    Name = "Click Me",
+    Name = "Inf Yield",
     Callback = function()
-        print("Button clicked!")
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end,
 })
 
 local DiscordTab = Window:CreateTab("Discord", 4483362458) -- Tab with a specific image ID
 
 local Paragraph = DiscordTab:CreateParagraph({Title = "Discord Link", Content = "here its: discord.gg/xYXKQkYAc2"})
+
+local ScriptTab = Window:CreateTab("Script", 4483362458)
+
+local Paragraph = ScriptTab:CreateParagraph({Title = "Game", Content = "Not Yet."})
+
+ScriptTab:CreateButton({
+    Name = "unknown",
+    Callback = function()
+        
+    end,
+})
+
+local Paragraph = ScriptTab:CreateParagraph({Title = "Game", Content = "Blox Fruits"})
+
+ScriptTab:CreateButton({
+    Name = "RedzHub",
+    Callback = function()
+        loadstring(game:HttpGet(“https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua”))()
+    end,
+})
