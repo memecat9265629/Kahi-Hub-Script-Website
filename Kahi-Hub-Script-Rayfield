@@ -23,14 +23,14 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
+local MainTab = Window:CreateTab("Main", 4483362458)
+
 Rayfield:Notify({
     Title = "Welcome!",
     Content = "Loaded, Successfully Kahi Hub - RayField",
     Duration = 3,
     Image = 4483362458
 })
-
-local MainTab = Window:CreateTab("Main", 4483362458)
 
 MainTab:CreateButton({
     Name = "Inf Yield",
@@ -48,6 +48,6 @@ local ScriptTab = Window:CreateTab("Script", 4483362458)
 ScriptTab:CreateButton({
     Name = "RedzHub",
     Callback = function()
-        loadstring(game:HttpGet(“https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua”))()
+    loadstring(game:HttpGet(“https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua”))()
     end,
 })
