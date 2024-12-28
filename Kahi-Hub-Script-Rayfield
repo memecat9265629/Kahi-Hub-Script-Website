@@ -15,7 +15,7 @@ local Window = Rayfield:CreateWindow({
    KeySettings = {
       Title = "Kahi Hub - Key system",
       Subtitle = "Script",
-      Note = "the discord for the key code Link: ", -- Use this to tell the user how to get a key
+      Note = "the discord for the key code Link: discord.gg/xYXKQkYAc2", -- Use this to tell the user how to get a key
       FileName = "Key_KahiHub", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
@@ -23,18 +23,22 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab = Window:CreateTab("Main", 4483362458) -- Tab with a specific image ID
+Rayfield:Notify({
+    Title = "Welcome!",
+    Content = "Loaded, Successfully Kahi Hub - RayField",
+    Duration = 5,
+    Image = 4483362458
+})
 
-Tab:CreateButton({
+local MainTab = Window:CreateTab("Main", 4483362458) -- Tab with a specific image ID
+
+MainTab:CreateButton({
     Name = "Click Me",
     Callback = function()
         print("Button clicked!")
     end,
 })
 
-Rayfield:Notify({
-    Title = "Welcome!",
-    Content = "Rayfield UI has been loaded successfully.",
-    Duration = 5,
-    Image = 4483362458
-})
+local DiscordTab = Window:CreateTab("Main", 4483362458) -- Tab with a specific image ID
+
+local Paragraph = DiscordTab:CreateParagraph({Title = "Discord Link", Content = "here its: discord.gg/xYXKQkYAc2"})
