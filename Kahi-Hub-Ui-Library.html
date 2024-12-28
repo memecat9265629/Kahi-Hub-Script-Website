@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kahi Hub - Ui library</title>
-    <style>
+    <style>        
         @font-face {
             font-family: 'CuteCat';
             src: url('CuteCat.ttf') format('truetype');
@@ -15,6 +15,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
 
         header {
@@ -23,13 +24,6 @@
             padding: 15px;
             text-align: center;
         }
-        
-        /* Dark Mode Styles */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #121212;
-                color: #e0e0e0; /* Light gray text for better readability */
-            }
 
         .container {
             max-width: 800px;
@@ -38,6 +32,7 @@
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333; /* Ensure readable text color in light mode */
         }
 
         h2 {
@@ -52,12 +47,14 @@
             white-space: pre-wrap;
             height: 150px;
             overflow-y: auto;
+            color: #333; /* Ensure readable text color */
         }
 
-        .discord-btn {
-            display: inline-block;
-            margin-top: 10px;
+        .discord-btn, .Website-btn {
+            display: block;
+            margin: 10px auto;
             text-decoration: none;
+            text-align: center;
             color: #fff;
             background-color: #7289da;
             padding: 10px 15px;
@@ -65,23 +62,10 @@
             font-weight: bold;
         }
 
-        .discord-btn:hover {
+        .discord-btn:hover, .Website-btn:hover {
             background-color: #5b6eae;
-        }
-        .Website-btn {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #7289da;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: bold;
         }
 
-        .Website-btn:hover {
-            background-color: #5b6eae;
-        }
         img {
             max-width: 100%;
             height: auto;
@@ -93,6 +77,47 @@
             height: 3px;
             background-color: black;
             margin: 20px 0;
+        }
+
+        /* Dark Mode Styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #e0e0e0; /* Light gray text for better readability */
+            }
+
+            .container {
+                background: #1e1e1e;
+                color: #e0e0e0; /* Ensure readable text color in dark mode */
+                box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            }
+
+            h2 {
+                color: #cfcfcf; /* Light gray for headings */
+            }
+
+            pre {
+                background: #2a2a2a;
+                border: 1px solid #444;
+                color: #e0e0e0; /* Light text for code blocks */
+            }
+
+            header {
+                background-color: #1a1a1a;
+                color: #e0e0e0; /* Light text for header */
+            }
+
+            .discord-btn, .Website-btn {
+                background-color: #5b6eae;
+            }
+
+            .discord-btn:hover, .Website-btn:hover {
+                background-color: #7289da;
+            }
+
+            .thick-hr {
+                background-color: #333;
+            }
         }
     </style>
 </head>
