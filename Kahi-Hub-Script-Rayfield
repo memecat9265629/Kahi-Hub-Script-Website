@@ -39,6 +39,6 @@ MainTab:CreateButton({
     end,
 })
 
-local DiscordTab = Window:CreateTab("Main", 4483362458) -- Tab with a specific image ID
+local DiscordTab = Window:CreateTab("Discord", 4483362458) -- Tab with a specific image ID
 
 local Paragraph = DiscordTab:CreateParagraph({Title = "Discord Link", Content = "here its: discord.gg/xYXKQkYAc2"})
