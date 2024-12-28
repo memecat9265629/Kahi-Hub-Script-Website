@@ -32,6 +32,7 @@
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333; /* Ensure readable text color in light mode */
         }
 
         h2 {
@@ -46,6 +47,7 @@
             white-space: pre-wrap;
             height: 150px;
             overflow-y: auto;
+            color: #333; /* Ensure readable text color */
         }
 
         .discord-btn, .Website-btn {
@@ -81,21 +83,28 @@
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #121212;
-                color: #e0e0e0;
+                color: #e0e0e0; /* Light gray text for better readability */
             }
 
             .container {
                 background: #1e1e1e;
+                color: #e0e0e0; /* Ensure readable text color in dark mode */
                 box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            }
+
+            h2 {
+                color: #cfcfcf; /* Light gray for headings */
             }
 
             pre {
                 background: #2a2a2a;
                 border: 1px solid #444;
+                color: #e0e0e0; /* Light text for code blocks */
             }
 
             header {
                 background-color: #1a1a1a;
+                color: #e0e0e0; /* Light text for header */
             }
 
             .discord-btn, .Website-btn {
