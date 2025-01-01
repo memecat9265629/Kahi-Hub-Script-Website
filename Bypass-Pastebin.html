@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastebin Code Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pastebin Code Viewer</h1>
+        <p>Enter the Pastebin URL below:</p>
+        <input type="text" id="pastebinUrl" placeholder="https://pastebin.com/xxxx">
+        <button id="fetchCode">Fetch Code</button>
+        <pre id="codeOutput"></pre>
+    </div>
+
+    <script>
+        document.getElementById('fetchCode').addEventListener('click', async () => {
+            const url = document.getElementById('pastebinUrl').value;
+            const match = url.match(/pastebin\.com\/(.*)/);
+            if (!match) {
+                alert('Invalid Pastebin URL');
+                return;
+            }
+
+            const pasteKey = match[1];
+            const apiUrl = `https://pastebin.com/raw/${pasteKey}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch the code');
+                }
+                const code = await response.text();
+                document.getElementById('codeOutput').textContent = code;
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+
+</body>
+</html>
