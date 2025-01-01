@@ -1,73 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastebin Code Viewer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        pre {
-            background-color: #272822;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastebin Raw Viewer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="container">
-        <h1>Pastebin Code Viewer</h1>
-        <p>Enter the Pastebin Raw URL below:</p>
-        <input type="text" id="pastebinUrl" placeholder="https://pastebin.com/raw/xxxx">
-        <button id="fetchCode">Fetch Code</button>
-        <pre id="codeOutput"></pre>
+  <div class="container">
+    <h1>Pastebin Raw Viewer</h1>
+    <p>Enter the Pastebin Raw URL to view the content:</p>
+    <input type="url" id="pastebinUrl" placeholder="Enter Pastebin Raw URL">
+    <button id="fetchContent">Fetch Content</button>
+    <div id="noteContainer">
+      <h2>Note:</h2>
+      <pre id="noteContent">Content will appear here...</pre>
     </div>
-
-    <script>
-        document.getElementById('fetchCode').addEventListener('click', async () => {
-            const url = document.getElementById('pastebinUrl').value;
-            const match = url.match(/pastebin\.com\/raw\/(.*)/);
-            if (!match) {
-                alert('Invalid Pastebin URL');
-                return;
-            }
-
-            const pasteKey = match[1];
-            const apiUrl = `https://pastebin.com/raw/${pasteKey}`;
-
-            try {
-                const response = await fetch(apiUrl);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch the code. Check Pastebin URL.');
-                }
-                const code = await response.text();
-                document.getElementById('codeOutput').textContent = code;
-            } catch (error) {
-                alert(error.message);
-            }
-        });
-    </script>
-
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
+CSS (styles.css)
+css
+Copy code
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+#noteContainer {
+  margin-top: 20px;
+}
+
+#noteContent {
+  white-space: pre-wrap;
+  background: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #444;
+  max-height: 300px;
+  overflow-y: auto;
+}
+JavaScript (script.js)
+javascript
+Copy code
+document.getElementById('fetchContent').addEventListener('click', async () => {
+  const pastebinUrl = document.getElementById('pastebinUrl').value;
+
+  // Validate URL
+  if (!pastebinUrl || !pastebinUrl.startsWith('https://pastebin.com/raw/')) {
+    alert('Please enter a valid Pastebin Raw URL!');
+    return;
+  }
+
+  try {
+    // Fetch content from the provided Pastebin raw URL
+    const response = await fetch(pastebinUrl);
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    const content = await response.text();
+    document.getElementById('noteContent').textContent = content;
+  } catch (error) {
+    document.getElementById('noteContent').textContent = `Failed to fetch content. ${error.message}`;
+  }
+});
