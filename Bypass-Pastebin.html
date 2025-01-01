@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastebin Code Viewer (Vietnam Bypass)</title>
+    <title>Pastebin Code Viewer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,9 +37,9 @@
 <body>
 
     <div class="container">
-        <h1>Pastebin Code Viewer (Vietnam Bypass)</h1>
-        <p>Enter the Pastebin URL below:</p>
-        <input type="text" id="pastebinUrl" placeholder="https://pastebin.com/xxxx">
+        <h1>Pastebin Code Viewer</h1>
+        <p>Enter the Pastebin Raw URL below:</p>
+        <input type="text" id="pastebinUrl" placeholder="https://pastebin.com/raw/xxxx">
         <button id="fetchCode">Fetch Code</button>
         <pre id="codeOutput"></pre>
     </div>
@@ -47,7 +47,7 @@
     <script>
         document.getElementById('fetchCode').addEventListener('click', async () => {
             const url = document.getElementById('pastebinUrl').value;
-            const match = url.match(/pastebin\.com\/(.*)/);
+            const match = url.match(/pastebin\.com\/raw\/(.*)/);
             if (!match) {
                 alert('Invalid Pastebin URL');
                 return;
@@ -59,7 +59,7 @@
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) {
-                    throw new Error('Failed to fetch the code. Possible region restriction.');
+                    throw new Error('Failed to fetch the code. Check Pastebin URL.');
                 }
                 const code = await response.text();
                 document.getElementById('codeOutput').textContent = code;
