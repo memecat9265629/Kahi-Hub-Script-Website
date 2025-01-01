@@ -4,26 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pastebin Raw Viewer</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Pastebin Raw Viewer</h1>
-    <p>Enter the Pastebin Raw URL to view the content:</p>
-    <input type="url" id="pastebinUrl" placeholder="Enter Pastebin Raw URL">
-    <button id="fetchContent">Fetch Content</button>
-    <div id="noteContainer">
-      <h2>Note:</h2>
-      <pre id="noteContent">Content will appear here...</pre>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
-CSS (styles.css)
-css
-Copy code
-body {
+<style>
+  body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -89,10 +71,21 @@ button:hover {
   max-height: 300px;
   overflow-y: auto;
 }
-JavaScript (script.js)
-javascript
-Copy code
-document.getElementById('fetchContent').addEventListener('click', async () => {
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pastebin Raw Viewer</h1>
+    <p>Enter the Pastebin Raw URL to view the content:</p>
+    <input type="url" id="pastebinUrl" placeholder="Enter Pastebin Raw URL">
+    <button id="fetchContent">Fetch Content</button>
+    <div id="noteContainer">
+      <h2>Note:</h2>
+      <pre id="noteContent">Content will appear here...</pre>
+    </div>
+  </div>
+  <script>
+    document.getElementById('fetchContent').addEventListener('click', async () => {
   const pastebinUrl = document.getElementById('pastebinUrl').value;
 
   // Validate URL
@@ -115,3 +108,6 @@ document.getElementById('fetchContent').addEventListener('click', async () => {
     document.getElementById('noteContent').textContent = `Failed to fetch content. ${error.message}`;
   }
 });
+  </script>
+</body>
+</html>
